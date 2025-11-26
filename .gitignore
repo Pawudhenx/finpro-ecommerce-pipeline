@@ -1,1 +1,16 @@
-*.log
+# Airflow logs (DO NOT TRACK)
+airflow/logs/**
+airflow/logs/*
+airflow/scheduler/**/*.log
+airflow/scheduler/**
+airflow/plugins/__pycache__/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
