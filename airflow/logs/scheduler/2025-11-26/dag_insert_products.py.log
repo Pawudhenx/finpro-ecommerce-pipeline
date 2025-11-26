@@ -1623,3 +1623,31 @@ ModuleNotFoundError: No module named 'app'
 [2025-11-26T07:06:23.287+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:06:23.287+0000] {dag.py:3089} INFO - Sync 1 DAGs
 [2025-11-26T07:06:23.354+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:06:23.354+0000] {dag.py:3947} INFO - Setting next_dagrun for insert_dummy_products_hourly to 2025-11-26 07:00:00+00:00, run_after=2025-11-26 08:00:00+00:00
 [2025-11-26T07:06:23.404+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_insert_products.py took 0.242 seconds
+[2025-11-26T07:06:53.940+0000] {processor.py:161} INFO - Started process (PID=199) to work on /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:06:53.942+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_insert_products.py for tasks to queue
+[2025-11-26T07:06:53.945+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:06:53.944+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:06:54.019+0000] {processor.py:840} INFO - DAG(s) 'insert_dummy_products_hourly' retrieved from /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:06:54.051+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:06:54.050+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-26T07:06:54.077+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:06:54.077+0000] {dag.py:3947} INFO - Setting next_dagrun for insert_dummy_products_hourly to 2025-11-26 07:00:00+00:00, run_after=2025-11-26 08:00:00+00:00
+[2025-11-26T07:06:54.103+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_insert_products.py took 0.172 seconds
+[2025-11-26T07:07:24.311+0000] {processor.py:161} INFO - Started process (PID=201) to work on /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:07:24.313+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_insert_products.py for tasks to queue
+[2025-11-26T07:07:24.315+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:07:24.315+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:07:24.365+0000] {processor.py:840} INFO - DAG(s) 'insert_dummy_products_hourly' retrieved from /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:07:24.390+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:07:24.390+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-26T07:07:24.414+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:07:24.414+0000] {dag.py:3947} INFO - Setting next_dagrun for insert_dummy_products_hourly to 2025-11-26 07:00:00+00:00, run_after=2025-11-26 08:00:00+00:00
+[2025-11-26T07:07:24.442+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_insert_products.py took 0.137 seconds
+[2025-11-26T07:07:54.839+0000] {processor.py:161} INFO - Started process (PID=203) to work on /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:07:54.841+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_insert_products.py for tasks to queue
+[2025-11-26T07:07:54.844+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:07:54.844+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:07:54.924+0000] {processor.py:840} INFO - DAG(s) 'insert_dummy_products_hourly' retrieved from /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:07:54.959+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:07:54.959+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-26T07:07:54.990+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:07:54.990+0000] {dag.py:3947} INFO - Setting next_dagrun for insert_dummy_products_hourly to 2025-11-26 07:00:00+00:00, run_after=2025-11-26 08:00:00+00:00
+[2025-11-26T07:07:55.018+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_insert_products.py took 0.185 seconds
+[2025-11-26T07:08:25.631+0000] {processor.py:161} INFO - Started process (PID=205) to work on /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:08:25.632+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_insert_products.py for tasks to queue
+[2025-11-26T07:08:25.635+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:08:25.634+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:08:25.693+0000] {processor.py:840} INFO - DAG(s) 'insert_dummy_products_hourly' retrieved from /opt/airflow/dags/dag_insert_products.py
+[2025-11-26T07:08:25.723+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:08:25.723+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-26T07:08:25.751+0000] {logging_mixin.py:188} INFO - [2025-11-26T07:08:25.750+0000] {dag.py:3947} INFO - Setting next_dagrun for insert_dummy_products_hourly to 2025-11-26 07:00:00+00:00, run_after=2025-11-26 08:00:00+00:00
+[2025-11-26T07:08:25.781+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_insert_products.py took 0.158 seconds
