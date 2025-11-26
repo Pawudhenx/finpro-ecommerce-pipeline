@@ -9,7 +9,7 @@ services:
       POSTGRES_DB: ecommerce
     ports:
 
-      - "5432:5432"
+      - "5440:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./sql/init_postgres.sql:/docker-entrypoint-initdb.d/init_postgres.sql:ro
@@ -30,11 +30,10 @@ services:
       "
     environment:
       AIRFLOW__CORE__LOAD_EXAMPLES: "False"
-      AIRFLOW__CORE__EXECUTOR: "LocalExecutor"
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: "sqlite:////opt/airflow/airflow.db"
       PG_DSN: "host=postgres user=postgres password=postgres dbname=ecommerce port=5432"
+      PYTHONPATH: "/opt/airflow"
     ports:
-      - "8080:8080"
+      - "8080:8080"  # atau 8090:8080 kalau kamu pakai 8090 di host
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
@@ -43,6 +42,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+
 
 volumes:
   pgdata:
