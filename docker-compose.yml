@@ -33,7 +33,7 @@ services:
       PG_DSN: "host=postgres user=postgres password=postgres dbname=ecommerce port=5432"
       PYTHONPATH: "/opt/airflow"
     ports:
-      - "8080:8080"  # atau 8090:8080 kalau kamu pakai 8090 di host
+      - "8080:8080"  
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/logs:/opt/airflow/logs
