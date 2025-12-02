@@ -3,9 +3,8 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
-# Dengan PYTHONPATH=/opt/airflow dan app ter-mount ke /opt/airflow/app,
-# import di bawah ini akan bekerja:
-from app.batch.dummy_users import load_dummy_users  # type: ignore
+
+from app.batch.dummy_users import load_dummy_users  
 
 
 DEFAULT_ARGS = {

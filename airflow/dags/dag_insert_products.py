@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
-from app.batch.dummy_products import load_dummy_products  # type: ignore
+from app.batch.dummy_products import load_dummy_products  
 
 
 DEFAULT_ARGS = {
