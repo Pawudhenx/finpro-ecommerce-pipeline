@@ -1,7 +1,6 @@
 # Airflow logs (DO NOT TRACK)
 airflow/logs/**
 airflow/logs/*
-airflow/scheduler/**/*.log
 airflow/scheduler/**
 airflow/plugins/__pycache__/
 
@@ -15,4 +14,5 @@ __pycache__/
 # IDE
 .vscode/
 
-.json
+# GCP / credentials (sesuaikan kalau mau lebih spesifik)
+app/*.json
