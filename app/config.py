@@ -5,5 +5,5 @@ PG_DSN = os.getenv(
     "host=postgres user=postgres password=postgres dbname=ecommerce port=5432"
 )
 
-BQ_PROJECT_ID = "jcdeah-006"  # tetap
-BQ_DATASET = "fauzan_finpro"  # nanti kamu sesuaikan
+BQ_PROJECT_ID = "jcdeah-006"  
+BQ_DATASET = "fauzan_finpro"  
