@@ -1,5 +1,6 @@
 import uuid
-from datetime import datetime
+from datetime import datetime, timedelta
+
 from .db_utils import insert_many
 
 CATEGORIES = ["electronics", "fashion", "grocery", "toys", "sports"]
@@ -7,7 +8,7 @@ CATEGORIES = ["electronics", "fashion", "grocery", "toys", "sports"]
 
 def generate_dummy_products(n: int = 10):
     """
-    Generate n baris dummy product.
+    Generate n baris dummy product dengan created_date = H-1.
     """
     rows = []
     for i in range(n):
@@ -15,7 +16,10 @@ def generate_dummy_products(n: int = 10):
         product_name = f"Product {i+1}"
         category = CATEGORIES[i % len(CATEGORIES)]
         price = 10000 + (i * 5000)
-        created_date = datetime.utcnow()
+
+        # H-1
+        created_date = datetime.utcnow() - timedelta(days=1)
+
         rows.append((product_id, product_name, category, price, created_date))
     return rows
 

@@ -32,7 +32,7 @@ services:
       AIRFLOW__CORE__LOAD_EXAMPLES: "False"
       PG_DSN: "host=postgres user=postgres password=postgres dbname=ecommerce port=5432"
       PYTHONPATH: "/opt/airflow"
-      GOOGLE_APPLICATION_CREDENTIALS: "/opt/airflow/app/jcdeah-006-b18fd9371986.json"
+      GOOGLE_APPLICATION_CREDENTIALS: "/opt/airflow/app/jcdeah-006-e1b616f9939c.json"
     ports:
       - "8080:8080"  
     volumes:

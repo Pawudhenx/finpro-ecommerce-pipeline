@@ -1,6 +1,7 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import psycopg2
 from google.cloud import bigquery
+from decimal import Decimal
 
 from app.config import PG_DSN, BQ_PROJECT_ID, BQ_DATASET
 
@@ -31,6 +32,23 @@ def _fetch_h_minus_1(table_name: str, execution_date_str: str):
     return cols, rows, h1
 
 
+def _serialize_for_bq(value):
+    """
+    Convert Python types into JSON-safe values:
+    - datetime/date → ISO string
+    - Decimal → float
+    """
+    from datetime import datetime, date
+
+    if isinstance(value, (datetime, date)):
+        return value.isoformat()
+
+    if isinstance(value, Decimal):
+        return float(value)   # atau int(value) kalau kolom pasti integer
+
+    return value
+
+
 def _load_to_bq(table_name: str, cols: list, rows: list):
     """
     Load list of rows (list of tuples) ke BigQuery.
@@ -42,10 +60,12 @@ def _load_to_bq(table_name: str, cols: list, rows: list):
     client = bigquery.Client(project=BQ_PROJECT_ID)
     table_id = f"{BQ_PROJECT_ID}.{BQ_DATASET}.{table_name}"
 
-    dict_rows = [
-        {col: val for col, val in zip(cols, row)}
-        for row in rows
-    ]
+    dict_rows = []
+    for row in rows:
+        item = {}
+        for col, val in zip(cols, row):
+            item[col] = _serialize_for_bq(val)
+        dict_rows.append(item)
 
     job_config = bigquery.LoadJobConfig(
         write_disposition=bigquery.WriteDisposition.WRITE_APPEND,
@@ -62,7 +82,7 @@ def run_etl_postgres_to_bq(execution_date: str):
     Function yang akan dipanggil DAG.
     execution_date: 'YYYY-MM-DD' (Airflow {{ ds }})
     """
-    tables = ["users", "products", "orders"]  # orders mungkin masih kosong, tidak apa-apa
+    tables = ["users", "products", "orders"]  # orders boleh kosong dulu
 
     for tbl in tables:
         cols, rows, h1 = _fetch_h_minus_1(tbl, execution_date)
