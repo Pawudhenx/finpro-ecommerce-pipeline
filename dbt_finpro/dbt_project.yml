@@ -1,0 +1,2 @@
+name: 'dbt_finpro'
+profile: 'finpro_bq'

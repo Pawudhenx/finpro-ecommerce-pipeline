@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dm_fraud_daily_summary
+    description: "Rekap transaksi fraud harian."
+    columns:
+      - name: order_date
+      - name: total_tx
+      - name: fraud_count
+      - name: fraud_rate
+
+  - name: dm_user_risk_profile
+    description: "Profil risiko user berdasarkan perilaku transaksi."
+    columns:
+      - name: user_key
+        tests:
+          - not_null

@@ -1,0 +1,12 @@
+finpro_bq:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: jcdeah-006
+      dataset: fauzan_finpro   
+      threads: 4
+      keyfile: /mnt/d/finpro-ecommerce-pipeline/app/jcdeah-006-e1b616f9939c.json
+      location: asia-southeast2   
+      priority: interactive

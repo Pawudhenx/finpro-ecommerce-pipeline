@@ -17,4 +17,10 @@ __pycache__/
 # GCP / credentials (sesuaikan kalau mau lebih spesifik)
 app/*.json
 
-my_project_env/
+venv/
+
+dbt_finpro/logs/**
+
+logs/
+
+*.json

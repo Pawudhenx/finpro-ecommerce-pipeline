@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fact_orders
+    description: "Fakta transaksi order dari streaming pipeline."
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: user_key
+        tests:
+          - not_null
+      - name: product_key
+        tests:
+          - not_null
